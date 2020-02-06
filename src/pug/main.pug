@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				.last-seen
+					.last-seen__profile
+						.last-user
+							.last-user__title Последний замечен
+							.last-user__profile
+								.user
+									figure.user__img
+										img(src="img/photos/user-img.jpg")
+										<!-- user-dot--absence если отсутствует -->
+										.user-dot.user-dot--working
+									.user__desc
+										.ud
+											.ud__name Дмитрий Жердев
+											.ud__row
+												.ud__row-title Должность
+												.ud__row-text Руководитель отдела разработки
+											.ud__row
+												.ud__row-title Подразделение
+												.ud__row-text Отдел разработки
+											.ud__status 
+												<!-- user-status--absence если отсутствует -->
+												.user-status.user-status--working Работает
+							.last-user__btns
+								.lu-btns
+									.lu-btns__item
+										a.default-btn(href="#") 
+											span.default-btn__text Перейти в профиль
+									.lu-btns__item
+										a.default-btn.default-btn--bordered(href="#")
+											include ../img/ico-photo.svg
+											span.defaul-btn__text Показать фото
+							.last-user__list
+								.lu-list
+									.lu-list__row
+										.lu-list__row-camera
+											div Камера на входе
+											div.subtitle (первая запись)
+										.lu-list__row-date 23.01.2020
+										.lu-list__row-time 14:30:13
+									.lu-list__row
+										.lu-list__row-camera
+											div Камера на входе
+											div.subtitle (последняя запись)
+										.lu-list__row-date 23.01.2020
+										.lu-list__row-time 14:30:13
+									.lu-list__row
+										.lu-list__row-camera
+											div Камера на выходе
+											div.subtitle (последняя запись)
+										.lu-list__row-date 23.01.2020
+										.lu-list__row-time 14:30:13
+							.last-user__summary
+								.last-user__summary-title Провел на работе
+								.last-user__summary-summary 08:13:35
+					.last-seen__camera
+						.l-camera
+							.l-camera__video
+								video(muted="" poster="img/photos/camera-poster.jpg")
+							.l-camera__toggler
+								.camera-toggler
+									.camera-toggler__text Вход
+									.camera-toggler__btn
+										.ct-btn.ct-btn--left
+											<!-- ct-btn--right для переключения в другую сторону -->
+									.camera-toggler__text Выход			
+				.users-list
+					.users-list__title Сотрудники компании
+					.users-list__sort
+						form(action="#")
+							.ul-sort
+								.ul-sort__search
+									.default-input
+										input.default-input__input(type="text" placeholder="Введите имя, фамилию или должность")
+								.ul-sort__print
+									a.default-btn.default-btn--bordered.fancybox(href="#print-stats")
+										include ../img/ico-print.svg
+										span.default-btn__text Распечатать статистику
+								.ul-sort__selects 
+									.sort-selects
+										.sort-selects__item
+											.default-input
+												select.default-input__input.default-input__input--select
+													- for (let i = 1; i <= 31; i++)
+														option(value=i)=i
+										.sort-selects__item
+											.default-input
+												select.default-input__input.default-input__input--select
+													option(value="0") Январь
+													option(value="1") Январь
+													option(value="2") Январь
+													option(value="3") Январь
+													option(value="4") Январь
+													option(value="5") Январь
+										.sort-selects__item
+											.default-input
+												select.default-input__input.default-input__input--select
+													option(value="0") Сортировать по: дате (посление замеченные)
+													option(value="1") Сортировать по: дате (посление замеченные)
+													option(value="2") Сортировать по: дате (посление замеченные)
+													option(value="3") Сортировать по: дате (посление замеченные)
+													option(value="4") Сортировать по: дате (посление замеченные)
+					.users-list__table
+						table.ul-table
+							thead
+								tr
+									th Сотрудник 
+									th Должность
+									th Подразделение
+									th Дата
+									th 
+										div Камера на входе
+										div (первая запись)
+									th 
+										div Камера на входе
+										div (последняя запись)
+									th 
+										div Камера на входе
+										div (последняя запись)
+									th Провел на работе
+							tbody
+								each user, i in [{name: "Дмитрий Жердев", pos: "Руководитель отдела разработки", dep: "Отдел разработки"}, {name: "Алексей Попков", pos: "Маркетолог", dep: "Отдел разработки"},{name: "Екатерина Клочнева", pos: "Интернет маркетолог", dep: "Контекстная реклама"}]
+									tr
+										td
+											.ul-user
+												figure.ul-user__img
+													img(src="img/photos/ul-img-"+i+".jpg")
+													<!-- user-dot--absence если отсутствует -->
+													.user-dot.user-dot--working
+												.ul-user__name=user.name
+										td 
+											div=user.pos
+										td 
+											div=user.dep
+										td 
+											div 23.01.2020
+										td 
+											div 08:40:03
+												a.photo(data-fancybox="" href="#")
+										td 
+											div 08:39:03
+												a.photo(data-fancybox="" href="#")
+										td 
+											div 18:40:03
+												a.photo(data-fancybox="" href="#")
+										td 
+											div 09:13:35
+								tr
+									td
+										.ul-user
+											figure.ul-user__img
+												img(src="img/photos/autist.jpg")
+												<!-- user-dot--absence если отсутствует -->
+												.user-dot.user-dot--absence
+											.ul-user__name Вадим Дибров
+									td 
+										div Разнорабочий
+									td 
+										div Управление проектами
+									td 
+										div 23.01.2020
+									td 
+										div 08:40:03
+											a.photo(data-fancybox="" href="#")
+									td 
+										div 08:39:03
+											a.photo(data-fancybox="" href="#")
+									td 
+										div 18:40:03
+											a.photo(data-fancybox="" href="#")
+									td 
+										div 09:13:35
+								each user, i in [{name: "Владислав Митрошин", pos: "Программист", dep: "Группа программирования"}, {name: "Иван Климов", pos: "Программист", dep: "Группа программирования"}]
+									tr
+										td
+											.ul-user
+												figure.ul-user__img
+													img(src="img/photos/ul-img-"+(i+4)+".jpg")
+													<!-- user-dot--absence если отсутствует -->
+													.user-dot.user-dot--working
+												.ul-user__name=user.name
+												
+										td 
+											div=user.pos
+										td 
+											div=user.dep
+										td 
+											div 23.01.2020
+										td 
+											div 08:40:03
+												a.photo(data-fancybox="" href="#")
+										td 
+											div 08:39:03
+												a.photo(data-fancybox="" href="#")
+										td 
+											div 18:40:03
+												a.photo(data-fancybox="" href="#")
+										td 
+											div 09:13:35
+					.users-list__btn
+						a.default-btn.default-btn--bordered(href="#")
+							include ../img/ico-refresh.svg
+							<!-- default-btn--loading для анимации загрузки -->
+							span.default-btn__text Показать ещё
+		include inc/footer.pug
+		include inc/scripts.pug
