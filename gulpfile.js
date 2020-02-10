@@ -69,7 +69,7 @@ gulp.task("postcss", _ =>
 			require("postcss-nesting"),
 			require("postcss-nested"),
 			require("postcss-font-magician")(require("./config/postcss/fonts.js")),
-			require("cssnano"),
+			// require("cssnano"),
 			// require("precss"),
 		], {parser: require("sugarss")})).on("error", $.notify.onError())
 		.pipe($.rename(path => {
