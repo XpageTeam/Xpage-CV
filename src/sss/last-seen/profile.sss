@@ -73,16 +73,50 @@
 		position: absolute 6px 0 * *
 
 	&__name
-		font-weight: 500
-		font-size: em(18)
 		margin: 0 0 10px
+		display: flex
+		align-items: center
+		padding-right: 60px
 
-		&[href]
+		span
+			font-weight: 500
+			font-size: em(18)
 
+		&-temp
+			height: 28px
+			display: flex
+			flex-direction: column
+			position: relative
+			align-items: center
+			justify-content: flex-start
+			margin-left: 10px
+			transform: translateY(3px)
+
+			img
+				max-width: none
+				width: 30px
+			
 			&:hover
-				color: var(--main-color)
+
+				.thermometer__popup
+					opacity: 1
+					pointer-events: all
+
+			i
+				font-style: normal
+				color: inherit
+				display: block
+				text-align: center
+				margin: 3px 0 0
+				font-size: 12px
+
+		// &[href]
+
+		// 	&:hover
+		// 		color: var(--main-color)
 
 	&__row
+		max-width: 150px
 
 		&:not(:last-child)
 			margin: 0 0 10px
@@ -94,6 +128,32 @@
 			line-height: calc(22 / 16)
 			margin: 3px 0 0
 
+.thermometer__popup
+	transition: opacity .3s ease
+	opacity: 0
+	pointer-events: none
+	color: #000
+	background: #fff
+	padding: 10px
+	position: absolute 50% * * calc(100% + 12px)
+	border: 1px solid var(--border-color)
+	transform: translateY(-50%)
+	box-shadow: var(--default-shadow)
+	font-size: 13px
+	white-space: nowrap
+	z-index: 1
+	border-radius: 5px
+
+.temperature-numbers
+	
+	&__norm
+		color: var(--main-color)
+
+	&__mid
+		color: #d7b000
+
+	&__high
+		color: red
 
 .user-status, .user-dot
 
@@ -102,6 +162,8 @@
 
 	&--absence
 		color: #EB5757
+
+	&-thermometer
 
 .user-status
 	font-size: em(12)
