@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Авторизация
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading.space
+		include inc/header.pug
+		.accesses
+			.accesses__item
+				.accesses__heading
+					h2 Предоставить дополнительные доступы
+				.accesses__cta
+					form(action="#")
+						.form__inputs.form__inputs--3
+							.form__inputs-input
+								.default-input
+									input.default-input__input(type="text" placeholder="ФИО")
+									label.default-input__label Введите ФИО
+							.form__inputs-input
+								.default-input
+									select.default-input__input.default-input__input--select
+										option(value="1") Выберите отдел
+										option(value="2") Отдел 1
+										option(value="3") Отдел 2
+										option(value="4") Отдел 3
+										option(value="5") Отдел 4
+									label.default-input__label Выберите отдел
+							.form__inputs-input
+								.default-input
+									input.default-input__input(type="email" placeholder="E-mail")
+									label.default-input__label Введите E-mail:
+							.form__inputs-input
+								.default-input
+									input.default-input__input(type="text" placeholder="Логин")
+									label.default-input__label Введите логин:
+							.form__inputs-input
+								.default-input
+									input.default-input__input(type="password" placeholder="Пароль")
+									label.default-input__label Введите пароль:
+							.form__inputs-input
+								a.default-btn.default-btn--bordered
+									svg(width="8" height="8" viewbox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg")
+										path(d="M8 3.45283H4.57931V0H3.42069V3.45283H0V4.56604H3.42069V8H4.57931V4.56604H8V3.45283Z" fill="white")
+									span.default-btn__text Добавить
+				.accesses__btn
+					a.default-btn(href="#")
+						span.default-btn__text Готово
+
+
+		include inc/footer.pug
+		include inc/scripts.pug
+

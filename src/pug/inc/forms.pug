@@ -149,3 +149,66 @@
 								span.default-btn__text Загрузить из документа
 					.form__btns-item
 						input.default-btn(type="submit" value="Добавить") 
+.popup#add-client
+	.popup__title Добавить клиента
+	.popup__content
+		form(action="#")
+			.form__inputs
+				.form__inputs-input
+					.default-input
+						input.default-input__input(type="text" required="" placeholder="Admin" value="Дмитрий Жердев")
+						label.default-input__label Фио
+						.default-input__error
+							.error-text <!-- текст ошибки -->
+				.form__inputs-input
+					.default-input
+						select.default-input__input.default-input__input--select
+							option(value="0") VIP - клиент
+							option(value="1") не VIP - клиент
+							option(value="2") нежелательный
+							option(value="3") обычый
+						label.default-input__label Статус клиента
+						.default-input__error
+							.error-text <!-- текст ошибки -->
+				.form__inputs-input
+					.default-input
+						input.default-input__input.default-input__input--file(type="file" id="file" multiple="")
+						.default-input__input-filetext
+							input.default-input__input(type="text" placeholder="Прикрепите фотографии" readonly="")
+							label.default-input__label--file(for="file")
+						label.default-input__label Фотографии для распознования
+					.ue-photos__list
+						.photos-list
+							.photos-list__item
+								.p-item
+									figure.p-item__img
+										img(src="img/photos/removable-img.jpg")
+									a.p-item__remove(href="#")
+							.photos-list__item
+								.p-item
+									figure.p-item__img
+										img(src="img/photos/removable-img.jpg")
+									a.p-item__remove(href="#")
+							.photos-list__item
+								.p-item
+									figure.p-item__img
+										img(src="img/photos/removable-img.jpg")
+									a.p-item__remove(href="#")
+							.photos-list__item
+								.p-item
+									figure.p-item__img
+										img(src="img/photos/removable-img.jpg")
+									a.p-item__remove(href="#")
+									.p-item__loader
+										.p-item__loader-bar
+											.p-item__loader-progress(style="transform: scaleX(.75)")
+											<!-- от 0 до 1 -->
+				.form__btns
+					.form__btns-item
+						.file-btn
+							input.file-btn__input(type="file" id="fileb-btn")
+							label.default-btn.default-btn--bordered(for="fileb-btn")
+								include ../../img/ico-doc.svg
+								span.default-btn__text Загрузить из документа
+					.form__btns-item
+						input.default-btn(type="submit" value="Добавить")

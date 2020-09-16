@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Авторизация
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading.space
+		include inc/header.pug
+		.login
+			.login__auth
+				.auth__heading
+					h2 Заполните поля
+				form(action="login")
+					.form__name
+						input.default-input__input(type="name" placeholder="Придумайте логин")
+					.form__pass
+						input.default-input__input(type="password" placeholder="Придумайте пароль")
+						input.default-input__input(type="password" placeholder="Повторите пароль")
+					.form__cta
+						input.default-input__input(type="email" placeholder="Введите E-mail")
+						input.default-input__input(type="phone" placeholder="Введите телефон")
+					.auth__btn
+						input.default-btn(type="submit" value="Продолжить")
+				a.back(href="#")
+					svg(width="11" height="11" viewbox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg")
+						g(clip-path="url(#clip0)")
+							path(d="M0.126027 5.80416C0.126156 5.80429 0.126264 5.80444 0.126414 5.80457L2.37162 8.03894C2.53982 8.20632 2.81188 8.2057 2.9793 8.03748C3.14671 7.86928 3.14606 7.59722 2.97786 7.42982L1.47043 5.92969H10.5703C10.8076 5.92969 11 5.73732 11 5.50001C11 5.26269 10.8076 5.07032 10.5703 5.07032H1.47046L2.97784 3.5702C3.14604 3.40279 3.14669 3.13074 2.97928 2.96254C2.81185 2.79429 2.53977 2.79371 2.3716 2.96108L0.126392 5.19545C0.126264 5.19557 0.126156 5.19573 0.126005 5.19585C-0.0422812 5.36382 -0.0417442 5.63676 0.126027 5.80416Z" fill="#2AAD6D")
+						defs
+							clippath#clip0
+								rect(width="11" height="11" fill="white" transform="translate(11 11) rotate(-180)")
+					span Вернуться назад
+
+		include inc/footer.pug
+		include inc/scripts.pug
+

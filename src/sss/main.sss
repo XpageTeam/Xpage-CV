@@ -23,6 +23,10 @@
 @import "user-detail/user-detail.sss"
 @import "profile-edit/profile-edit.sss"
 
+@import "auth.sss"
+@import "add-dep.sss"
+@import "accesses.sss"
+
 @font-face
 	font-family: Gilroy
 	font-style: normal
@@ -40,6 +44,15 @@
 		position: absolute 0 * * 0
 		opacity: 0
 		pointer-events: none
+
+.page-toggle
+	padding-top: 15px
+	display: flex
+	align-items: flex-start
+	margin-bottom: 30px
+
+	&__item
+		margin-right: 16px
 
 @media (max-width: 1400px)
 	:root

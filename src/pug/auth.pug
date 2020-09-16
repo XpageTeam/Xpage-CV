@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Авторизация
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading.space
+		include inc/header.pug
+		.login
+			.login__auth
+				.auth__heading
+					h2 Добро пожаловать
+				form(action="login")
+					.auth__name
+						input.default-input__input(type="text" placeholder="Введите имя компании")
+					.auth__btn
+						input.default-btn(type="submit" value="Продолжить")
+
+		include inc/footer.pug
+		include inc/scripts.pug
+
