@@ -3,6 +3,9 @@
 	align-items: flex-start
 	padding: 24px var(--inline-padding)
 
+	+ .ul-sort
+		padding-top: 0
+
 	&__selects
 		margin-left: auto
 
@@ -10,9 +13,18 @@
 		width: 480px
 		margin-right: 16px
 
+		.default-input__input:not(select)
+			padding-right: 40px
+			background-image: url('../img/ico-search.svg')
+			background-repeat: no-repeat
+			background-position: right 15px center
+
 	&__print
 		display: flex
 		flex-direction: column
+
+		&-auto
+			margin-left: auto
 
 		.default-btn
 			flex: 1 1 auto
@@ -24,6 +36,9 @@
 	display: flex
 	// flex-direction: column-reverse
 	// align-items: flex-end
+
+	&-center
+		align-items: center
 
 	&__item
 
@@ -47,3 +62,12 @@
 		color: #919191
 		margin: 0 0 5px
 		width: calc(100% - 16px)
+
+.ul-sort
+	&--clients
+
+		.sort-selects
+			align-items: center
+
+		.sort-selects__title
+			font-size: 0.875rem

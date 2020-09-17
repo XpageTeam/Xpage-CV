@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Главная
+		include inc/head.pug
+		include inc/css.pug
+	body.main.loading
+		include inc/header.pug
+		main#content
+			.wrapper
+				#app
+				.users-list
+					.users-list__title Посмотреть отчет
+					.users-list__table
+						.users-list__sort
+							form(action="")
+								.ul-sort
+									.ul-sort__search
+										.default-input
+											input.default-input__input.default-input__input(placeholder="Введите имя сотрудника (латинскими буквами)")
+									
+									.ul-sort__print
+										a.default-btn.default-btn--bordered.fancybox
+											| Все сотрудники
+
+									.ul-sort__selects
+										.default-input
+											select.default-input__input.default-input__input--select
+												option(value="0") Выбор сотрудника
+												option(value="137") Emelyanov Artem
+												option(value="135") Gornostaev Sergey
+												option(value="130") Hasanov Evgeniy
+												option(value="129") Kazakova Elena
+												option(value="140") Khandiys Daniil
+												option(value="144") Khmel Andrey
+												option(value="138") Koroblev Georgiy
+												option(value="133") Koverin Dmitriy
+												option(value="143") Luts Yulia
+												option(value="134") Markina Elena
+												option(value="145") Perezhogina Elena
+												option(value="139") Polyakov Nikita
+												option(value="136") Popkov Alexey
+												option(value="132") Popov Arseniy
+												option(value="141") Shalamov Vladimir
+												option(value="131") Skorikov Sergey
+												option(value="142") Starikov Anton
+												option(value="77") Александр Сысолякин
+												option(value="64") Александра Веселова
+												option(value="76") Александра Тихонова
+												option(value="75") Алексей Аверьянов
+												option(value="61") Альфия Недашковская
+												option(value="60") Андрей Хмель
+												option(value="74") Арсений Попов
+												option(value="78") Артем Уваров
+												option(value="150") Бикбау Наталья
+												option(value="146") Вадим Дибров
+												option(value="73") Валерий Львов
+												option(value="155") Веселова Александра
+												option(value="72") Виталий Морозов
+												option(value="71") Владислав Митрошин
+												option(value="111") Гослинг Райан
+												option(value="151") Дмитрий Балашов
+												option(value="70") Евгений Хасанов
+												option(value="69") Екатерина Клочнева
+												option(value="68") Елена Маркина
+												option(value="59") Иван Климов
+												option(value="152") Илья Чуйко
+												option(value="154") Климов Иван
+												option(value="149") Львов Валерий
+												option(value="66") Мария Чебышева
+												option(value="65") Наталья Бикбау
+												option(value="148") Недашковская Альфия
+												option(value="147") Нефедов Владислав
+												option(value="153") Нечаева Ксения
+												option(value="63") Сергей Горностаев
+												option(value="62") Сергей Скориков
+								.ul-sort
+									.ul-sort__search
+										.default-input
+											select.default-input__input.default-input__input--select(style="width: 250px;")
+												option(value="today") За сегодня
+												option(value="yesterday") За вчера
+												option(value="week") За неделю
+												option(value="last-week") За прошедшую неделю
+												option(value="month") За месяц
+												option(value="last-month") За прошедший месяц
+												option(value="interval") Указать интервал
+												option(value="exact-date") Указать дату
+
+									.ul-sort__selects
+										.sort-selects.sort-selects-center
+											.sort-selects__item
+												.date-selects__title C
+											.sort-selects__item
+												.default-input
+													select.default-input__input.default-input__input--select
+														option(value="1")
+															| 1
+														option(value="2")
+															| 2
+														option(value="3")
+															| 3
+														option(value="4")
+															| 4
+														option(value="5")
+															| 5
+														option(value="6")
+															| 6
+														option(value="7")
+															| 7
+														option(value="8")
+															| 8
+														option(value="9")
+															| 9
+														option(value="10")
+															| 10
+														option(value="11")
+															| 11
+														option(value="12")
+															| 12
+														option(value="13")
+															| 13
+														option(value="14")
+															| 14
+														option(value="15")
+															| 15
+														option(value="16")
+															| 16
+														option(value="17")
+															| 17
+											.sort-selects__item
+												.default-input
+													select.default-input__input.default-input__input--select
+														option(value="0")
+															| Январь 2020
+														option(value="1")
+															| Февраль 2020
+														option(value="2")
+															| Март 2020
+														option(value="3")
+															| Апрель 2020
+														option(value="4")
+															| Май 2020
+														option(value="5")
+															| Июнь 2020
+														option(value="6")
+															| Июль 2020
+														option(value="7")
+															| Август 2020
+														option(value="8")
+															| Сентябрь 2020
+														option(value="9")
+															| Октябрь 2019
+														option(value="10")
+															| Ноябрь 2019
+														option(value="11")
+															| Декабрь 2019
+											.sort-selects__item
+												.date-selects__title до
+											.sort-selects__item
+												.default-input
+													select.default-input__input.default-input__input--select
+														option(value="1")
+															| 1
+														option(value="2")
+															| 2
+														option(value="3")
+															| 3
+														option(value="4")
+															| 4
+														option(value="5")
+															| 5
+														option(value="6")
+															| 6
+														option(value="7")
+															| 7
+														option(value="8")
+															| 8
+														option(value="9")
+															| 9
+														option(value="10")
+															| 10
+														option(value="11")
+															| 11
+														option(value="12")
+															| 12
+														option(value="13")
+															| 13
+														option(value="14")
+															| 14
+														option(value="15")
+															| 15
+														option(value="16")
+															| 16
+														option(value="17")
+															| 17
+
+											.sort-selects__item
+												.default-input
+													select.default-input__input.default-input__input--select
+														option(value="0")
+															| Январь 2020
+														option(value="1")
+															| Февраль 2020
+														option(value="2")
+															| Март 2020
+														option(value="3")
+															| Апрель 2020
+														option(value="4")
+															| Май 2020
+														option(value="5")
+															| Июнь 2020
+														option(value="6")
+															| Июль 2020
+														option(value="7")
+															| Август 2020
+														option(value="8")
+															| Сентябрь 2020
+														option(value="9")
+															| Октябрь 2019
+														option(value="10")
+															| Ноябрь 2019
+														option(value="11")
+															| Декабрь 2019
+											//
+						table#stat-table.ul-table
+							thead
+								tr
+									th Дата
+									th Сотрудник
+									th Подразделение
+									th Время входа
+									th Время выхода
+									th Отработанное время
+									// 
+									th Выходил за рабочее время
+							tbody
+								tr(style="")
+									td
+										div 17.09.2020
+									td
+										.ul-user
+											a.ul-user__img(target="_blank")
+												img(src="/upload/uf/93a/93a77c660d5cf30f7bccda633194a7cf.jpeg")
+											a.ul-user__name(href="javascript:")
+												| Emelyanov Artem
+									td
+										div Группа программирования
+									td
+										div
+											| 09:04:16
+											a.photo(data-fancybox="/upload/uf/fe7/fe76c8376b18844be161d5c9fe2ee890.png" href="/upload/uf/fe7/fe76c8376b18844be161d5c9fe2ee890.png")
+									td
+										// 
+										// 
+									td
+										div -
+									// 
+									td
+										div 0
+						// 
+
+		include inc/footer.pug
+		include inc/scripts.pug

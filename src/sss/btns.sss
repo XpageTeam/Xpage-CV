@@ -6,9 +6,9 @@
 	border: 1px solid var(--main-color)
 	font-weight: 500
 	transition: background-color .4s ease, color .4s ease, border-color .4s ease
-	font-size: em(14)
-	padding: em(12) em(29) em(13)
-	line-height: inherit
+	font-size: 0.875rem
+	line-height: normal
+	padding: 17px 24px
 	cursor: pointer
 
 	svg
@@ -25,6 +25,8 @@
 
 	> svg
 		margin-right: 12px
+		margin-top: -1px
+		margin-bottom: -1px
 
 	&:not(&--bordered)
 		color: #fff var(--main-color)
@@ -36,6 +38,7 @@
 
 	&--bordered
 		color: var(--main-color)
+		
 
 		&:hover, &:focus
 

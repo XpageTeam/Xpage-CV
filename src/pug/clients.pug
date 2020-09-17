@@ -65,11 +65,11 @@ html(lang="ru")
 										.ct-btn.ct-btn--left
 											<!-- ct-btn--right для переключения в другую сторону -->
 									.camera-toggler__text Выход			
-				.users-list
+				.users-list.users-list--clients
 					.users-list__title Клиенты
 					.users-list__sort
 						form(action="#")
-							.ul-sort
+							.ul-sort.ul-sort--clients
 								.ul-sort__search
 									.default-input
 										input.default-input__input(type="text" placeholder="Введите имя, фамилию")
@@ -78,6 +78,10 @@ html(lang="ru")
 										span.default-btn__text Посмотреть отчет
 								.ul-sort__selects 
 									.sort-selects
+										.sort-selects__item
+											.sort-selects__title Выбрать период по времени:
+										.sort-selects__item 
+											.sort-selects__title с
 										.sort-selects__item
 											.default-input
 												select.default-input__input.default-input__input--select
@@ -92,111 +96,76 @@ html(lang="ru")
 													option(value="3") Январь
 													option(value="4") Январь
 													option(value="5") Январь
+										.sort-selects__item 
+											.sort-selects__title по
 										.sort-selects__item
 											.default-input
 												select.default-input__input.default-input__input--select
-													option(value="0") Сортировать по: дате (посление замеченные)
-													option(value="1") Сортировать по: дате (посление замеченные)
-													option(value="2") Сортировать по: дате (посление замеченные)
-													option(value="3") Сортировать по: дате (посление замеченные)
-													option(value="4") Сортировать по: дате (посление замеченные)
+													- for (let i = 1; i <= 31; i++)
+														option(value=i)=i
+										.sort-selects__item
+											.default-input
+												select.default-input__input.default-input__input--select
+													option(value="0") Январь
+													option(value="1") Январь
+													option(value="2") Январь
+													option(value="3") Январь
+													option(value="4") Январь
+													option(value="5") Январь
 					.users-list__table
 						table.ul-table
 							thead
 								tr
-									th Сотрудник 
-									th Должность
-									th Подразделение
+									th Клиент 
+									th Статус пользователя
 									th Дата
-									th 
-										div Камера на входе
-										div (первая запись)
-									th 
-										div Камера на входе
-										div (последняя запись)
-									th 
-										div Камера на входе
-										div (последняя запись)
-									th Провел на работе
+									th Время
 							tbody
-								each user, i in [{name: "Дмитрий Жердев", pos: "Руководитель отдела разработки", dep: "Отдел разработки"}, {name: "Алексей Попков", pos: "Маркетолог", dep: "Отдел разработки"},{name: "Екатерина Клочнева", pos: "Интернет маркетолог", dep: "Контекстная реклама"}]
+								each user, i in [{name: "Дмитрий Жердев", status: "VIP  - клиент"}, {name: "Алексей Попков", status: "VIP  - клиент"},{name: "Екатерина Клочнева", status: "VIP  - клиент"}]
 									tr
 										td
 											.ul-user
 												figure.ul-user__img
 													img(src="img/photos/ul-img-"+i+".jpg")
-													<!-- user-dot--absence если отсутствует -->
-													.user-dot.user-dot--working
 												.ul-user__name=user.name
 										td 
-											div=user.pos
-										td 
-											div=user.dep
+											div.ul-user__status.ul-user__status--vip=user.status
 										td 
 											div 23.01.2020
-										td 
-											div 08:40:03
-												a.photo(data-fancybox="" href="#")
-										td 
-											div 08:39:03
 												a.photo(data-fancybox="" href="#")
 										td 
 											div 18:40:03
 												a.photo(data-fancybox="" href="#")
-										td 
-											div 09:13:35
 								tr
 									td
 										.ul-user
 											figure.ul-user__img
 												img(src="img/photos/autist.jpg")
-												<!-- user-dot--absence если отсутствует -->
-												.user-dot.user-dot--absence
 											.ul-user__name Вадим Дибров
 									td 
-										div Разнорабочий
-									td 
-										div Управление проектами
-									td 
+										div.ul-user__status.ul-user__status--unwanted Нежелетальный
+									td
 										div 23.01.2020
-									td 
-										div 08:40:03
 											a.photo(data-fancybox="" href="#")
 									td 
 										div 08:39:03
 											a.photo(data-fancybox="" href="#")
-									td 
-										div 18:40:03
-											a.photo(data-fancybox="" href="#")
-									td 
-										div 09:13:35
-								each user, i in [{name: "Владислав Митрошин", pos: "Программист", dep: "Группа программирования"}, {name: "Иван Климов", pos: "Программист", dep: "Группа программирования"}]
+								each user, i in [{name: "Владислав Митрошин", status: "Нежелетальный"}, {name: "Иван Климов", status: "Нежелетальный"}]
 									tr
 										td
 											.ul-user
 												figure.ul-user__img
 													img(src="img/photos/ul-img-"+(i+4)+".jpg")
-													<!-- user-dot--absence если отсутствует -->
-													.user-dot.user-dot--working
 												.ul-user__name=user.name
 												
 										td 
-											div=user.pos
-										td 
-											div=user.dep
+											div.ul-user__status.ul-user__status--unwanted=user.status
 										td 
 											div 23.01.2020
-										td 
-											div 08:40:03
 												a.photo(data-fancybox="" href="#")
 										td 
 											div 08:39:03
 												a.photo(data-fancybox="" href="#")
-										td 
-											div 18:40:03
-												a.photo(data-fancybox="" href="#")
-										td 
-											div 09:13:35
 					.users-list__btn
 						a.default-btn.default-btn--bordered(href="#")
 							include ../img/ico-refresh.svg

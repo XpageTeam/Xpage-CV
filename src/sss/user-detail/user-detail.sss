@@ -107,3 +107,38 @@
 
 				&:not(:last-child)
 					margin: 0 16px 0 0
+
+.u-about
+	&--client
+		grid-template-columns: 1fr 2fr
+
+		.u-about__profile
+			height: max-content
+
+			.user
+				margin-bottom: 35px
+
+			.ud-client
+				max-width: 360px
+				width: 100%
+				margin-bottom: 50px
+
+			.lu-btns
+				flex-direction: column
+
+				&__item:not(:last-child)
+					margin-right: 0
+					margin-bottom: 15px
+
+.client-profile__table
+	.ul-table th
+		padding-top: 25px
+		padding-bottom: 25px
+
+	.ul-table td
+		padding-top: 40px
+		padding-bottom: 40px
+
+	.ul-table td:last-child, 
+	.ul-table th:last-child
+		width: 70%

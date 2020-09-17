@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+html(lang="ru")
+	head
+		meta(charset="utf-8")
+		title Профиль клиента
+		include inc/head.pug
+		include inc/css.pug
+	body.inner.loading
+		include inc/header.pug
+		main#content
+			.inner-page
+				.inner-page__content
+					.wrapper
+						.client-profile
+							.u-about.u-about--client
+								.u-about__profile
+									.user
+										figure.user__img
+											img(src="img/photos/user-detail-img.jpg")
+										.user__desc
+											.ud
+												.ud__name 
+													span Дмитрий Жердев
+									.ud-client
+										.ud-client__item
+											.ud-client__label Стутаус клиента
+											.ud-client__status.ud-client__status--vip 
+												|VIP - клиент
+										.ud-client__item
+											.ud-client__label Средний чек
+											.ud-client__acct 30 000 руб.
+									.lu-btns
+										.lu-btns__item
+											a.default-btn.default-btn--bordered(href="#")
+												include ../img/ico-photo.svg
+												span.defaul-btn__text Показать последнее фото
+										.lu-btns__item
+											a.default-btn(href="#") 
+												span.default-btn__text Редактировать профиль
+
+								.client-profile__table
+									.users-list__title Статистика клиента
+									.users-list__sort
+										form(action="#")
+											.ul-sort
+												.ul-sort__search
+													.default-input
+														select.default-input__input.default-input__input--select
+															- for (let i = 1; i <= 31; i++)
+																option(value=i) Показать статистику за неделю
+												.ul-sort__print
+													a.default-btn.default-btn--bordered.fancybox(href="#print-stats")
+														include ../img/ico-print.svg
+														span.default-btn__text Распечатать статистику
+									.users-list__table
+										table.ul-table
+											thead
+												tr
+													th Дата
+													th Время
+											tbody
+												- for (let i = 23; i <= 28; i++)
+													tr
+														td 
+															div=i+".01.2020"
+														td 
+															div 18:40:03
+																a.photo(data-fancybox="" href="#")
+		include inc/footer.pug
+		include inc/scripts.pug

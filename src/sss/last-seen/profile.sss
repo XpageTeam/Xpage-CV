@@ -80,7 +80,7 @@
 
 		span
 			font-weight: 500
-			font-size: em(18)
+			font-size: 1.125rem
 
 		&-temp
 			height: 28px
@@ -220,3 +220,52 @@
 		&__summary
 			grid-area: summary
 			border-left: 1px solid var(--border-color)
+
+
+.last-seen--client
+	.last-user
+		flex: inherit
+		margin-bottom: 15px
+
+.lu-counter
+	padding: 24px 32px
+
+	&__label
+		font-size: 0.875rem
+		margin-bottom: 10px
+
+	&__summary
+		font-weight: 500
+
+.ud
+	&-client
+		display: flex
+		justify-content: space-between
+		padding-right: 60px
+
+		&__item:first-child
+			margin-right: 30px
+
+		&__label
+			font-size: 0.75rem
+			margin-bottom: 10px
+			color: #909090
+
+		&__status
+			position: relative
+			display: flex
+			align-items: center
+			
+			&::before
+				content: ''
+				position: relative
+				display: inline-block
+				width: 17px
+				height: 17px
+				margin-right: 10px
+
+			&--vip
+				color: var(--main-color)
+
+				&::before
+					background: url('../img/smile.svg') no-repeat center
