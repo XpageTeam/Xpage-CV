@@ -6,13 +6,16 @@ header.head
 					img(src="img/logo.svg")
 				a.logo.logo--napoleon(href="#")
 					img(src="img/napoleon-logo.svg")
-			nav.head__menu
-				ul.h-menu
-					//- each item in ["Главная", "Сотрудники", ]
-					//- 	li
-					//- 		a.h-menu__link(href="#")=item
+			//- nav.head__menu
+			//- 	ul.h-menu
+			//- 		each item in ["Главная", "Сотрудники", ]
+			//- 			li
+			//- 				a.h-menu__link(href="#")=item
 			.head__btns
 				.h-btns
+					.h-btns__item
+						a.default-btn.default-btn--bordered(href="#")
+							span.default-btn__text Список клиентов
 					.h-btns__item
 						a.default-btn.default-btn--bordered.fancybox(href="#add-client")
 							include ../../img/ico-add-user.svg
@@ -21,3 +24,6 @@ header.head
 						a.default-btn.fancybox(href="#log-in")
 							include ../../img/ico-sign-in.svg
 							span.default-btn__text Войти
+					.h-btns__item
+						form(name="lang" action="/" method="post")
+							button.default-btn--bordered.default-btn(name="site_pref" value="en") EN
